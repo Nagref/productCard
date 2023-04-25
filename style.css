@@ -7,12 +7,32 @@
 }
 
 :root {
-  --bg-color: #d9cdf7;
-  --text-color: #271a45;
+  font-family: "JetBrains Mono", monospace;
+  --background: #22212c;
+  --comment: #7970a9;
+  --comment-secondary: #454158;
+  --selection: #414d58;
+  --selection-secondary: #8f9ba8;
+  --black: #0b0d0f;
+  --foreground: #f8f8f2;
+  --cyan: #80ffea;
+  --green: #8aff80;
+  --orange: #ffca80;
+  --yellow: #ffff80;
+  --red: #ff9580;
+  --pink: #ff80bf;
+  --purple: #9580ff;
+  --purple2: #d9cdf7;
+}
+
+::selection {
+  background: var(--purple) !important;
+  color: var(--black) !important;
+  text-shadow: 0 0 0 var(--black);
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: var(--purple2);
   height: 100vh;
 
   display: grid;
@@ -20,8 +40,8 @@ body {
 }
 
 body * {
-  color: var(--text-color);
-  font-family: "Lato", sans-serif;
+  color: var(--background);
+  font-family: "JetBrains Mono", monospace;
   line-height: 100%;
 }
 
@@ -69,12 +89,14 @@ html.animated img#animated {
 h4 {
   font-weight: 300;
   font-size: 10px;
+  color: var(--background);
 }
 
 h1 {
-  font-family: "Crimson Pro", serif;
+  font-family: "JetBrains Mono", monospace;
   font-weight: 600;
   font-size: 32px;
+  color: var(--background);
 
   margin-top: 12px;
 }
@@ -82,6 +104,7 @@ h1 {
 p {
   margin-top: 12px;
   opacity: 0.67;
+  color: var(--background);
 }
 
 #product-details button {
@@ -89,10 +112,16 @@ p {
   line-height: 16px;
 
   padding: 8px 16px;
-  border: 0.5px solid var(--text-color);
+  border: 1.5px solid var(--comment);
   border-radius: 999px;
-
-  background-color: transparent;
+  color: var(--background);
+  background-color: var(--purple2);
 
   margin-top: 20px;
+}
+
+#product-details button:hover {
+  background-color: var(--purple);
+  color: var(--foreground);
+  cursor: pointer;
 }
